@@ -1,2 +1,4 @@
-# twitter
-Twitter Data Analysis Workflow
+# Twitter Data Analysis Workflow
+To create workflows applicable to analyzing Twitter data
+
+SoDAVi Group
