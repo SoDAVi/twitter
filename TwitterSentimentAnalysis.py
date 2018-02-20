@@ -16,7 +16,6 @@ total_sentiment_neg = 0
 total_sentiment_neu = 0
 total_sentiment_compound = 0
 
-
 #keywords = ['the good doctor', 'thegooddoctor', 'gooddoctor', 'david shore', 'freddie highmore', 'shaun murphy']
 
 with open(file_path) as file:

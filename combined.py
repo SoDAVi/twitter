@@ -1,7 +1,3 @@
-# This program takes the original CSV files and
-# 1. divides the file into original tweet and retweet and save as a csv file 
-# 2.  
-
 #!/usr/bin/python
 import os.path
 from collections import Counter
@@ -17,8 +13,8 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 def main():
 
-	filePath = "/Users/summerseo/Desktop/testfile.csv" # <--%%%%%%%%%%%%%Put inital CSV to start%%%%%%%%%%%%%%%%%
-	header = "Result for Good Doctor Week __ \n\n\n" # <--%%%%%%%%%%%%header of the text file%%%%%%%%%%%%%%%%%
+	filePath = sys.argv[1] 
+	header = sys.argv[2] # <--%%%%%%%%%%%%header of the text file%%%%%%%%%%%%%%%%%
 
 	def divideCSV_original_retweet():
 
@@ -118,9 +114,6 @@ def main():
 		#print(rslt)
 		btsFrequencyPath=final_directory+"/btsfrequency.csv"
 		rslt.to_csv(btsFrequencyPath, index = True, encoding='utf-8')
-
-		#plot
-		# rslt.plot.bar(rot=0, figsize=(16,10), width=0.8) => ???
 	
 	#######################################################################################################
 
