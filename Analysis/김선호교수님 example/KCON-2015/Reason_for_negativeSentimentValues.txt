@@ -1,0 +1,32 @@
+Sample Tweets from the Negative Sentiment for KCON Tweets
+====================================================================================================
+Polarity,   Number of Tweets,   Tweet Text
+-0.75       912                 @ Nam_Chayen : [ HQ ] 150731 #BamBam At ICN Airport heading LA #KCON15LA #JustRight
+-0.75       222                 @ GOT7_Thailand : [ VID ] 150731 #GOT7 Airport Fashion ( KCON 2015 USA ) cr : StarSeoulTV
+-0.75       870                 @ OfficialMwave : [ Airport Fashion/Photo ] #GOT7 Leaves for #KCON15LA
+
+
+Sample Tweets Leading to Negative Sentiment for VIXX
+======================================================================================================
+Polarity,   Tweet Text
+-0.75       RT @ VIXXHyuk_PH : [ PIC ] @ SEOUL LAND MUSIC FESTIVAL // 150801 // DO NOT EDIT cr : Dazzling__smile # VIXX # HYUK
+-0.75       RT @ VIXXbiased : [ IG ] 150802 Nana School Dancer Update # VIXX # LEO # KEN # HYUK https : //t.co/jCmpVfcNrW
+-0.75       RT @ LATTE901110 : [ FANCAM ] 150731 # VIXX LEO College Expo - Lighten Up performance ( source : Charisma524 )
+-0.75       RT @ VIXX_sTRarlight : [ FANCAM ] 150731 # VIXX LEO College Expo - Lighten Up performance
+-0.75       RT @ BbomSoul : [ PIC ] # GOT7 - SBS Power FM 's Vixx N K-Pop Radio source : http : //t.co/SKO3sfcXFe http : //t.co/VYshPnG9UQ.
+-0.75       RT @ BubblebamB : [ PIC ] 150806 Vixx N K-POP Radio Star Talk # GOT7 cr.http : //t.co/k1ARfGgxcm http : //t.co/hvvqqRwMoE.
+-0.75       RT @ charisma_bam : [ PIC ] 150806 # GOT7 SBS VIXX N KPOP - Star Talk # BamBam Cr.http : //t.co/ZgrVkpxZrP
+-0.75       RT @ LATTE901110 : [ IG/PIC ] # VIXX # VIXXinNY # KCON2015 # LR Fan Engagement ( source : pervingonvixx )
+-0.75       RT @ LATTE901110 : [ FANCAM ] Preview 150718 Kawaii # VIXX LEO Guangzhou showcase ( source : CloseToLEO )
+-0.75       RT @ jastvixx : [ TRANS ] # VIXX # Hongbin # Ken @ RealVIXX http : //t.co/tQN6ExExVy.
+-0.75       RT @ jastvixx : [ TRANS ] # Ken # Hyuk said video message official fan cafe 150808 # VIXX http : //t.co/HrK2T3dap2.
+-0.75       `` taeyong_s : [ Preview ] # KCON NY # Vixx fan engagement // # Leo http : //t.co/NIjzZHlF9L ''.
+-0.75       RT @ jastvixx : [ TRANS ] # Ken # Hyuk said video message official fan cafe 150808 # VIXX http : //t.co/HrK2T3dap2
+-0.75       RT @ aka_mint : ( fancam ) # VIXX @ # KCON NY/NJ 2015 Fan Engagement ( cr.bellank18 ) http : //t.co/A4TCTyYtCN.
+-0.9375     RT @ jastvixx : [ NEWS ] # VIXX # Leo glamor infinite !
+-0.9375     RT @ VIXXDOTCOM_ : [ TRANS ] Hello five VIXX !
+-0.9375     RT @ SanghyukSG : [ FACEBOOK ] 150801 | # VIXX `` Hello Starlights !
+-0.9375     RT @ VIXXDOTCOM_ : [ PIC ] VIXX Official Japan Site 's header update Stay tuned members updates !
+-0.9375     RT @ VIXXSG : [ PIC/INSTA ] # VIXX Ravi ( rravii0215 ) posted picture instagram !
+-0.9375     RT @ VIXXDOTCOM_ : [ PIC ] VIXX Official Japan Site 's header update Leo Stay tuned members updates !
+-0.9375     RT @ VIXXbiased : [ INFO ] # VIXX heading United States Orlando showcase KCON 2015 .. RT @ leej_hwan : VIXX COMEBACK !
