@@ -13,10 +13,10 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 def main():
 
-	filePath = sys.argv[1] 
-	header = sys.argv[2] # <--%%%%%%%%%%%%header of the text file%%%%%%%%%%%%%%%%%
-
-	def divideCSV_original_retweet():
+	filePath = sys.argv[1] # Takes filePath(Initial CSV) as an argument
+	header = sys.argv[2] # header of the text file 
+    
+	def divideCSV_original_retweet(): # Takes in original CSV file and seperate into two files. (Retweet and NonRetweet)
 
 		containRetweet = csvFile[csvFile["Text"].str.contains("rt @")]
 		notContainRetweet = csvFile[csvFile["Text"].str.contains("rt @")==False] 
@@ -26,7 +26,7 @@ def main():
 		containRetweet.to_csv( reTweetCSVPath, index = True, encoding='utf-8')
 		notContainRetweet.to_csv( originalTweetCSVPath, index = True, encoding='utf-8')
 
-	def numTweets():
+	def numTweets(): #Counting number of twitter messages that contain keywords
 
 		#keywords to search
 		keywords = []
@@ -47,19 +47,19 @@ def main():
 
 		outFile.write( "total number of tweets that contain all keywords: " +  str(total_containKeywords) + "\n\n" )
 
-	def numReTweets():
+	def numReTweets(): # Counting Number of Retweets 
 
 		containRetweet = csvFile[csvFile["Text"].str.contains("rt")]
 		outFile.write("total number of retweet: " + str(len(containRetweet)) + "\n\n" )
 	
-	def originalSentiment():
+	def originalTweetsSentiment(): # Sentiment values for non-retweeted messages
 
 		outFile.write("[Nonretweeted Tweets]\nPositive: " + str(originalTweetFile["Positive"].mean()) + "\n" +
 		       "Negative: " + str(originalTweetFile["Negative"].mean()) + "\n" +
 		       "Neutral: " + str(originalTweetFile["Neutral"].mean()) + "\n" +
 		       "Compound: " + str(originalTweetFile["Compound"].mean()) + "\n\n" )
 	
-	def retweetSentiment():
+	def retweetSentiment(): # Sentiment values for tweeted messages
 
 		outFile.write("[Retweeted Tweets]\nPositive: " + str(reTweetFile["Positive"].mean()) + "\n" +
 		       "Negative: " + str(reTweetFile["Negative"].mean()) + "\n" +
@@ -68,7 +68,7 @@ def main():
 
 	def frequencyTimeZoneTable():
 
-		#All Tweets (original + retweet)
+		#Calculate for All Tweets (original + retweet)
 		
 		#initialize start date & end date
 		print("\nTime Zone Frequency Comparison: ")
@@ -77,10 +77,13 @@ def main():
 
 		day = csvFile.loc[csvFile['Day'].isin([input_day])]
 		hour = csvFile.loc[csvFile['Hour'].isin([input_hour])]
-		timeZone = hour['Time Zone'].value_counts().to_frame()
+		timeZone_hourly = hour['Time Zone'].value_counts().to_frame()
+		timeZone_day = day['Time Zone'].value_counts().to_frame()
 
-		timeZoneCSVPath = final_directory+"/timeZoneResult.csv" 
-		timeZone.to_csv( timeZoneCSVPath, index = True)
+		timeZoneCSVPath_hourly = final_directory+"/day"+str(input_day)+"hours"+str(input_hour)+"timeZoneResult.csv" 
+		timeZoneCSVPath_day = final_directory+"/day"+str(input_day)+"hours"+str(input_hour)+"timeZoneResult.csv" 
+		timeZone_hourly.to_csv( timeZoneCSVPath_hourly, index = True)
+		timeZone_day.to_csv( timeZoneCSVPath_day, index = True)
 
 	def frequencyWord():
 
@@ -89,8 +92,7 @@ def main():
 		df = pd.DataFrame(originalTweetFile)
 		#initizlie the word to check frequency
 
-		print("\nTime Zone Frequency Comparison: ")
-		frequentWord = raw_input("\nEnter a word to search: \n")
+		frequentWord = raw_input("\nEnter a word to search: (Frequency Word)\n")
 		containFrequentWord = df[df['Text'].str.contains(frequentWord, case=False)]
 
 		#write out as csv file 
@@ -114,8 +116,11 @@ def main():
 		#print(rslt)
 		btsFrequencyPath=final_directory+"/btsfrequency.csv"
 		rslt.to_csv(btsFrequencyPath, index = True, encoding='utf-8')
+
+		#plot
+		# rslt.plot.bar(rot=0, figsize=(16,10), width=0.8) 
 	
-	#######################################################################################################
+	################################################################################
 
 	current_directory = os.getcwd()
 	final_directory = os.path.join(current_directory, r'Results')
@@ -133,6 +138,7 @@ def main():
 	
 	outFile = open(outFilePath, 'w')
 	
+
 	select = int(input(" **************************************\
 	 \n 1. All \n 2. Num of tweeets that contain keywords (Original Tweet)\
 	 \n 3. Num of retweets \n 4. Sentimental Analysis (Original Tweet + Retweet) \n 5. Frequency Time Zone Table\
@@ -145,7 +151,7 @@ def main():
 
 		numTweets()
 		numReTweets()
-		originalSentiment()
+		originalTweetsSentiment()
 		retweetSentiment()
 		frequencyTimeZoneTable()
 		frequencyWord()
@@ -160,7 +166,7 @@ def main():
 		
 	elif(select == 4):
 
-		originalSentiment()
+		originalTweetsSentiment()
 		retweetSentiment()
 
 	elif(select == 5):
